@@ -47,23 +47,26 @@ while answer == 'y':
     max_cap = int(input("How many people are allowed into this meeting?: "))
     people = int(input("How many people will be attending this meeting?: "))
 
+    print("")
+
     #Calculate the difference in space
     remaining_sp = difference(people, max_cap)
 
     #Checks if the meeting is legal or illegal
     if people <= max_cap:
-            print(f"There are {people} people signed up for this meeting. {remaining_sp*-1} is the number of space left in the meeting room. This meeting is LEGAL and fits within fire regulations!")
+            print(f"There are {people} people signed up for this meeting. {remaining_sp} is the number of space left in the meeting room. This meeting is LEGAL and fits within fire regulations!")
             print ("Have a good meeting!!")
     else:
             print(f"There are too many people in this meeting and it is now ILLEGAL according to fire regulations. \nRemove {remaining_sp*-1} or you and your associates will soon be riding in a cop car together!!")
 
 
     #Display Meeting Information
-    print("")
-    print("********************")
-    print(f"Meeting Name:{meeting_name} ")
-    print(f"There will be {people} people in attendance.")
-    print("********************")
+    if people <= max_cap: 
+        print("")
+        print("************************************************")
+        print(f"Meeting Name:{meeting_name} ")
+        print(f"There will be {people} people in attendance.")
+        print("************************************************")
 
 
     #Ask if the user wants to set up another meeting
