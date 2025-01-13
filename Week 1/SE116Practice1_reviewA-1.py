@@ -17,15 +17,15 @@
 
 #--------FUNCTIONS--------------------------------------------
 def again(): #<-- Fucntion Header
-    '''this fuction asks a user if they'd like to enter another temp, checks the 
+    '''this fuctiwhile ans != "y" and ans != "n":
+        print("***INVALID ENTRY***")
+        ans = input("\t\tWould you like to enter another temperature? [y/n]: ").lower()on asks a user if they'd like to enter another temp, checks the 
     response for validity, and then returns a valid response back to the main program'''
 
     ans = input("\t\tWould you like to enter another temperature? [y/n]: ").lower()
 
     #user error trap loop - ensures the user provides valid value
-    while ans != "y" and ans != "n":
-        print("***INVALID ENTRY***")
-        ans = input("\t\tWould you like to enter another temperature? [y/n]: ").lower()
+    
 
     return ans #this value will replace the fuction call in the main code
     print ("see you space cowboy!")
