@@ -23,6 +23,7 @@ print ("------------------------------------------------------------------------
 with open ("text_files/filehandling.csv") as csvfile:
     file =csv.reader(csvfile)
 
+    
 
     for rec in file:
         total_pcs +=1
@@ -41,5 +42,8 @@ with open ("text_files/filehandling.csv") as csvfile:
             os = rec[6]
             yr = rec[7]
 
-                   
+
+        if rec [0] == 'D':
+            rec [0] = "Desktop"
+            
         print(f"{type:7} {brand:7} {cpu:2}   {ram:2}\t  {disk:5}\t   {num:1}  \t{sec_disk:5} \t {os:3} {yr:2}")
