@@ -4,9 +4,11 @@
 #1-16-2025
 
 #PROGRAM PROMPT:You have been asked to produce a report that lists all the computers in the csv file
-#filehandling.csv.
+#filehandling.csv.Your report should look like the following sample output.The last line should print the number of computers in the file.
+
 
 #Varible Dictionary:
+#total_pcs: Total number of Pcs 
 
 #Imports--------------------
 import csv
@@ -18,16 +20,18 @@ import csv
 #initialze variables 
 total_pcs = 0
 
-print (f"{'Type':7} {'Brand':7} {'CPU':2} {'RAM':2} {'1st Disk':5} {'No HDD':1} {'2nd Disk':5} {'OS':3} {'YR':2}")
-print ("--------------------------------------------------------------------------------------------------------")
+#display column headings
+print (f"{'Type':7}   {'Brand':7}  {'CPU':2}   {'RAM':2}\t{'1st Disk':5}   {'No.HDD':1}   {'2nd Disk':5}\t {'OS':3}\t{'YR':2}")
+print ("---------------------------------------------------------------------------------------------------------------------")
 with open ("text_files/filehandling.csv") as csvfile:
     file =csv.reader(csvfile)
 
     
-
+    #below code occurs for every record (row) in the file
     for rec in file:
         total_pcs +=1
 
+        #assigning variable name to items in each record 
         type = rec[0]
         brand = rec[1]
         cpu = rec[2]
@@ -43,7 +47,21 @@ with open ("text_files/filehandling.csv") as csvfile:
             yr = rec[7]
 
 
+        #changing acronyms to  full words
         if rec [0] == 'D':
             rec [0] = "Desktop"
-            
-        print(f"{type:7} {brand:7} {cpu:2}   {ram:2}\t  {disk:5}\t   {num:1}  \t{sec_disk:5} \t {os:3} {yr:2}")
+
+        else: 
+            rec[0] = "Laptop"
+
+        if rec [1] == 'DL':
+            rec[1] = "Dell"
+        elif rec [1] == "GW":
+            rec [1] = "Gateway"
+        
+
+
+        print(f"{rec[0]:7}\t  {rec[1]:7}  {cpu:2}     {ram:2}\t  {disk:5}\t    {num:1}  \t      {sec_disk:5} \t {os:3}\t{yr:2}")
+
+#final print of total pcs
+print(f"\nThere are {total_pcs} PCs in Total\n")
