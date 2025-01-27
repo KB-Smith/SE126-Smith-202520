@@ -1,14 +1,21 @@
 #Kyle Smith
 #SE126.04
 #Lab 2
-#1-16-2025
+#1-27-2025
 
-#PROGRAM PROMPT:You have been asked to produce a report that lists all the computers in the csv file
-#filehandling.csv.Your report should look like the following sample output.The last line should print the number of computers in the file.
+#PROGRAM PROMPT:Your CIO (Chief Information Officer) has asked you to determine how much it would cost the company 
+# to replace all machines that are from 2016 and earlier. He plans on spending not more than $2,000 dollars for desktops 
+# and $1,500 for laptops.  Store the data from the file lab3a.csv into lists.  Then process the lists to reprint all of the 
+# file information (exactly as you did in Lab 2) and also produce an end report that lists the number of desktops that will be 
+# replaced, the cost to replace the desktops, the number of laptops that will be replaced, and the cost to replace the laptops.
 
 
 #Varible Dictionary:
-#total_pcs: Total number of Pcs 
+#total_pcs: Total number of Pcs
+#total_laptop: Number of laptops 
+#total_desktop: Number of desktops 
+#total_cost_desktops: Cost of replacing desktops
+#total_cost_laptops: Cost of replacing laptops 
 
 #Imports--------------------
 import csv
@@ -24,7 +31,6 @@ total_cost_desktops = 0
 total_cost_laptops = 0
 total_desktop = 0
 total_laptop = 0
-test = 0
 
 #display column headings
 print (f"{'Type':7}   {'Brand':7}  {'CPU':2}   {'RAM':2}\t{'1st Disk':5}   {'No.HDD':1}   {'2nd Disk':5}\t {'OS':3}\t{'YR':2}")
@@ -85,5 +91,7 @@ with open ("text_files/filehandling.csv") as csvfile:
 
 #final print of total pcs
 print(f"\nThere are {total_pcs} PCs in Total\n")
+print("*************************************************")
 print (f"To replace {total_desktop} desktops it will cost you: ${total_cost_desktops}")
-print(f"To replace {total_laptop} laptops it will cost you: ${total_cost_laptops}\n")
+print(f"To replace {total_laptop} laptops it will cost you: ${total_cost_laptops}")
+print("*************************************************")
