@@ -92,8 +92,7 @@ for i in range(0, len(test1)):
 #print("--------------------------------------------------------------------------------------\n")
 
 
-user_choice = menu()
-user_choice = 0
+
     
 while user_choice != "4":
         user_choice = menu()
@@ -135,22 +134,25 @@ while user_choice != "4":
                 time.sleep(7)   
 
         elif user_choice == "3":
-            found = -1
+            
             search_letter = input("Enter the Letter Grade you wish to find: ")
+            found = []
 
             for i in range(len(let_avg)):
                 if search_letter.lower() == let_avg[i].lower():
-                    found = i
+                    found.append(i)
 
-            if found != -1:
-                    print(f"Your search for {search_letter} was FOUND! Here is their data: ")
-                    print(f"{rec[0]:10} {lastName[found]:10} {test1[found]:3} {test2[found]:3} {test3[found]:3} {avg[found]:6.1f}")
-                    print("--------------------------------------------------------------------------------------------")
-            else:
+            if not found : 
                 print(f"Your search for {search_letter} was NOT FOUND!")
                 print("Check your casing and spelling and try again!")
                 print("--------------------------------------------------------------------------------------------")
-                time.sleep(7) 
+                time.sleep(4) 
+            else:
+                print(f"Your search for {search_letter} was FOUND! Here is their data: ")
+                for i in range (0,len(found)):
+                    print(f"{firstName[found[i]]:10} {lastName[found[i]]:10} {test1[found[i]]:3} {test2[found[i]]:3} {test3[found[i]]:3} {avg[found[i]]:6.1f}")
+                    print("--------------------------------------------------------------------------------------------")
+                    time.sleep(2) 
 
         elif user_choice == "4":
             print("Exiting....")
