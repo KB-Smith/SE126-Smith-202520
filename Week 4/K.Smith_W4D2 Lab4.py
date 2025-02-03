@@ -52,27 +52,22 @@ with open ("text_files/got_emails.csv") as csvfile:
         if rec[4] == "House Stark":
             department.append("Research & Development")
             extension.append(stark_ext)
-            stark_ext+1
         elif rec[4] == "House Targaryen":
             department.append("Marketing")
             extension.append(targaryen_ext)
-            targaryen_ext+1
         elif rec[4] == "House Tully":
             department.append("Human Resources")
             extension.append(tully_ext)
-            tully_ext+1
         elif rec[4] == "House Lannister":
             department.append("Accounting")
             extension.append(lannister_ext)
-            lannister_ext+1
         elif rec[4] == "House Baratheon":
             department.append("Sales")
             extension.append(baratheon_ext)
-            baratheon_ext+1
         elif rec[4] == "The Night's Watch":
             department.append("Auditing")
             extension.append(nightwatch_ext)
-            nightwatch_ext+1
+            
 
         
 
