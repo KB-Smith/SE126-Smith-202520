@@ -65,6 +65,7 @@ while ans == "y":
                 #search.lower() > names[mid].lower()
                 min = mid + 1
             mid = int((min + max) / 2) 
+
         if search.lower() == names[mid].lower():
             #we found it!
             print(f"Your search for {search} is complete, see below details: ")
@@ -166,7 +167,7 @@ print("\nThank you for using my program.\n\t\tGOODBYE!\n")
 #this will be a 2D list to hold all of the file data
 dataFile = []
 print("hello")
-with open("text_files/simple.csv") as csvfile:
+with open("text_files/simple-2.csv") as csvfile:
     file = csv.reader(csvfile)
     for rec in file:
         print("hi")
