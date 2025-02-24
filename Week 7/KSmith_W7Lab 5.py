@@ -105,12 +105,12 @@ while user_choice != "8":
                     title[k + 1] = temp
 
                    
-            # Prints Collumn Headers
+            # prints Collumn Headers
         print("----------------------------------------------------------------------------------------------------------------------------------------------------")
         print(f"{'LIBRARY NUM':4}\t{'TITLE':30}\t\t{'AUTHOR':35}\t{'GENRE':20}\t{'PAGE#':3}\t\t{'STATUS':10}")   
         print("----------------------------------------------------------------------------------------------------------------------------------------------------")
 
-            #printing the data
+            # printing the data
         for index in range(0, len(library_num)):
             print(f"{library_num[index]:4}\t\t{title[index]:34}    {author[index]:35}\t{genre[index]:20}\t{page_count[index]:3}   \t\t{status[index]:10}")
             print("------------------------------------------------------------------------------------------------------------------------------------------\n")
