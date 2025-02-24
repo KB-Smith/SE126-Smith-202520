@@ -61,19 +61,36 @@ answer = "y"
 
 while answer == "y":
 
+    # to handle errors for rows
+    try:
     
-    
+        row = int(input("Enter the row you want to sit in: "))
 
-    row = int(input("Enter the row you want to sit in: "))    
+        if row not in [1,2,3,4,5,6,7]:
+            row = int(input("INVALID ENTRY!!! Please Choose A Row 1-7: "))
         
-    while row not in [1,2,3,4,5,6,7] :
-            row = int (input("INVALID ENTRY!!! Please Choose A Row 1-7: "))
+    except ValueError:
+
+        row = int(input("Try Again ERROR!! Choose A ROWWW!! 1-7: "))
+
 
     index = row -1
 
-    seat = input(f"Enter the seat (A, B, C, D): ").upper()
+    # to handle errors for seats
+    try:
+
+        seat = input(f"Enter the seat (A, B, C, D): ").upper()
+
+        while seat not in ["A","B","C","D"]:
+            seat = input ("INVALID ENTRY!!! Please Choose A Seat (A,B,C or D): ").upper()
 
     
+
+    except ValueError:
+        seat = input (("PLEASE READ THE INSTRUCTIONS AND CHOOSE A SEAT (A, B, C or D)!!: ")).upper
+
+
+
     if seat == "A":
         seat_column = 0
     elif seat == "B":
