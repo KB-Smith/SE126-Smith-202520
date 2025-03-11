@@ -35,7 +35,7 @@ def seating_map():
 
     seat_setup = [a,b,c,d,e,f]
 
-    with open ("text_files/plane.csv") as csvfile:
+    with open ("text_files/final_plane.csv") as csvfile:
     # reading the CSV file
         file = csv.reader(csvfile)
 

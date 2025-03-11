@@ -69,7 +69,7 @@ while user_choice != "4":
             print("-" * 150)
     
     elif user_choice == "2":
-        search = input("\nEnter the WORD you are looking for: ")
+        search = input("\nEnter the WORD you are looking for: ").lower()
         found = 0
 
         for key in library:
@@ -84,11 +84,11 @@ while user_choice != "4":
     elif user_choice == "3":
         num_words = int(input("Enter the number of words you wish to add: "))
         for _ in range(num_words):
-            n_word = input("Enter the word: ")
+            n_word = input("Enter the word: ").lower()
             
             while  n_word in library:
                 print(f"{n_word} already exists in the dictionary.")
-                n_word = input("Enter the word: ")
+                n_word = input("Enter the word: ").lower()
 
             n_definition = input("Enter the definition: ")
             library[n_word] = n_definition
